@@ -12,15 +12,16 @@ import au.com.dius.pact.provider.junit.PactRunner;
 import au.com.dius.pact.provider.junit.Provider;
 import au.com.dius.pact.provider.junit.State;
 import au.com.dius.pact.provider.junit.VerificationReports;
+import au.com.dius.pact.provider.junit.loader.PactBroker;
 import au.com.dius.pact.provider.junit.loader.PactFolder;
-import au.com.dius.pact.provider.junit.loader.PactUrl;
 import au.com.dius.pact.provider.junit.target.HttpTarget;
 import au.com.dius.pact.provider.junit.target.Target;
 import au.com.dius.pact.provider.junit.target.TestTarget;
 
 @RunWith(PactRunner.class)
 @Provider("pact_provider")
-@PactFolder("/home/ubuntu/PactServices/Consumer/Consumer/target/pacts")
+@PactBroker(host="54.233.100.137", port = "8081")
+//@PactFolder("/home/ubuntu/PactServices/Consumer/Consumer/target/pacts")
 @VerificationReports({ "console", "markdown" })
 public class UserControllerTest {
 
