@@ -20,7 +20,7 @@ import au.com.dius.pact.provider.junit.target.TestTarget;
 
 @RunWith(PactRunner.class)
 @Provider("pact_provider")
-@PactBroker(host="54.207.30.143", port = "8081")
+@PactBroker(host="54.233.100.137", port = "8081")
 //@PactFolder("/home/ubuntu/PactServices/Consumer/Consumer/target/pacts")
 @VerificationReports({ "console", "markdown" })
 public class UserControllerTest {
