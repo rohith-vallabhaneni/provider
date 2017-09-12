@@ -41,6 +41,15 @@
    <version>3.5.4</version>
    <scope>test</scope>
   </dependency>
+
+<dependency>
+			<groupId>net.logstash.logback</groupId>
+			<artifactId>logstash-logback-encoder</artifactId>
+			<version>4.8</version>
+			<scope>runtime</scope>
+		</dependency>
+
+
  </dependencies>
 <repositories>
 		<repository>

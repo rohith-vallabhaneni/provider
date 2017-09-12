@@ -1,4 +1,4 @@
-``
+---
 customer: platform
 vertical: cdc
 
@@ -16,12 +16,12 @@ install:
 build: mvn clean install 
 
 services:
-- id: spbootsimple
+- id: providerexample
   type: java
   copy:
   - ./target/Producer-0.0.1-SNAPSHOT.jar /Producer-0.0.1-SNAPSHOT.jar
   # Memory settings have to be adjusted with respect to the resource limits below
-  exec: java -jar /Consumer-0.0.1-SNAPSHOT.jar
+  exec: java -jar /Producer-0.0.1-SNAPSHOT.jar
   check: true
   # These are the defaults and 
   # needs to be enhanced for most services
@@ -30,13 +30,11 @@ services:
       memory: "200Mi"
       cpu: "200m"
     limits:
-      memory: "300Mi"
+      memory: "500Mi"
       cpu: "1000m"
 
 # Specifies the files executed for tests on each environment. Need to be executable 'chmod +x'
-tests:
- - stage: pp
-   test: ./scripts/tests.sh
+
 
 watchers:
   - navyateja.otturu@ggktech.com
@@ -44,4 +42,3 @@ watchers:
 
 slack-channels:
   - '@peng-cdc'
-```
